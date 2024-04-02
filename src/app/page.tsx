@@ -54,8 +54,8 @@ export default function Home() {
       </ul>
 
       <p>
-        Candidates will be evaluated based on the performance optimization and
-        cleanliness of their code.
+        Candidates will be evaluated based on their understanding of React,
+        understanding and usage of react hooks and cleanliness of their code.
       </p>
 
       <TableComponent data={data} />

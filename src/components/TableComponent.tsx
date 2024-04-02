@@ -15,13 +15,18 @@ export default function TableComponent({ data }: TableProps) {
   if (data.length <= 0) return <></>;
 
   return (
-    <div className="w-full overflow-x-scroll">
+    <div className="w-full overflow-x-scroll border border-white rounded-md border-collapse">
       <table>
         <thead>
           <tr>
             {Object.keys(data[0]).map((header) =>
               isRenderableType(data[0][header]) ? (
-                <th key={header}>{header}</th>
+                <th
+                  key={header}
+                  className="border border-white px-4 py-2 whitespace-nowrap"
+                >
+                  {header}
+                </th>
               ) : (
                 <></>
               )
@@ -33,7 +38,12 @@ export default function TableComponent({ data }: TableProps) {
             <tr key={ind}>
               {Object.keys(row).map((itemKey, cellInd) =>
                 isRenderableType(row[itemKey]) ? (
-                  <td key={`${ind}_${cellInd}`}>{row[itemKey]}</td>
+                  <td
+                    key={`${ind}_${cellInd}`}
+                    className="border border-white px-4 py-2 whitespace-nowrap"
+                  >
+                    {row[itemKey]}
+                  </td>
                 ) : (
                   <></>
                 )
